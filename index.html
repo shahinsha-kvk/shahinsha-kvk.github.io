@@ -151,7 +151,7 @@
             cursor: pointer;
         }
 
-        /* Hero Section - Updated with Tech Logo Animation */
+        /* Hero Section - Enhanced with Better Tech Logo Animation */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -169,45 +169,71 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            opacity: 0.3;
+            opacity: 0.7;
         }
 
         .logo-item {
             position: absolute;
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.7);
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 
+                0 0 0 2px rgba(108, 99, 255, 0.3),
+                0 0 20px rgba(108, 99, 255, 0.2),
+                inset 0 0 20px rgba(108, 99, 255, 0.1);
+            animation: float 25s infinite linear;
+            transition: all 0.5s ease;
+        }
+
+        .logo-item:hover {
+            transform: scale(1.2);
+            box-shadow: 
+                0 0 0 3px rgba(108, 99, 255, 0.6),
+                0 0 40px rgba(108, 99, 255, 0.4),
+                inset 0 0 30px rgba(108, 99, 255, 0.2);
+            z-index: 10;
+        }
+
+        .logo-item i {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #6C63FF, #FF6584, #4CAF50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 10px rgba(108, 99, 255, 0.5));
-            animation: float 20s infinite linear;
         }
 
         .logo-item:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
-        .logo-item:nth-child(2) { top: 20%; right: 10%; animation-delay: 2s; }
-        .logo-item:nth-child(3) { top: 40%; left: 15%; animation-delay: 4s; }
-        .logo-item:nth-child(4) { top: 60%; right: 20%; animation-delay: 6s; }
-        .logo-item:nth-child(5) { top: 80%; left: 10%; animation-delay: 8s; }
-        .logo-item:nth-child(6) { top: 30%; right: 5%; animation-delay: 10s; }
-        .logo-item:nth-child(7) { top: 70%; right: 15%; animation-delay: 12s; }
-        .logo-item:nth-child(8) { top: 50%; left: 5%; animation-delay: 14s; }
+        .logo-item:nth-child(2) { top: 20%; right: 10%; animation-delay: 3s; }
+        .logo-item:nth-child(3) { top: 40%; left: 15%; animation-delay: 6s; }
+        .logo-item:nth-child(4) { top: 60%; right: 20%; animation-delay: 9s; }
+        .logo-item:nth-child(5) { top: 80%; left: 10%; animation-delay: 12s; }
+        .logo-item:nth-child(6) { top: 30%; right: 5%; animation-delay: 15s; }
+        .logo-item:nth-child(7) { top: 70%; right: 15%; animation-delay: 18s; }
+        .logo-item:nth-child(8) { top: 50%; left: 5%; animation-delay: 21s; }
 
         @keyframes float {
             0% {
-                transform: translateY(0) rotate(0deg);
+                transform: translateY(0) rotate(0deg) scale(1);
                 opacity: 0.7;
             }
             25% {
-                transform: translateY(-20px) rotate(90deg);
+                transform: translateY(-30px) rotate(90deg) scale(1.05);
                 opacity: 1;
             }
             50% {
-                transform: translateY(0) rotate(180deg);
+                transform: translateY(0) rotate(180deg) scale(1);
                 opacity: 0.7;
             }
             75% {
-                transform: translateY(20px) rotate(270deg);
+                transform: translateY(30px) rotate(270deg) scale(1.05);
                 opacity: 1;
             }
             100% {
-                transform: translateY(0) rotate(360deg);
+                transform: translateY(0) rotate(360deg) scale(1);
                 opacity: 0.7;
             }
         }
@@ -702,6 +728,15 @@
                 max-width: 220px;
                 height: 440px;
             }
+            
+            .logo-item {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .logo-item i {
+                font-size: 3rem;
+            }
         }
 
         @media (max-width: 992px) {
@@ -723,6 +758,15 @@
             
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .logo-item {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .logo-item i {
+                font-size: 2.5rem;
             }
         }
 
@@ -779,6 +823,15 @@
             .stats-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .logo-item {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .logo-item i {
+                font-size: 2rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -808,6 +861,15 @@
                 height: 35px;
                 font-size: 1rem;
             }
+            
+            .logo-item {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .logo-item i {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
@@ -830,7 +892,7 @@
         </div>
     </header>
 
-    <!-- Hero Section - Updated with Tech Logos -->
+    <!-- Hero Section - Enhanced with Better Tech Logos -->
     <section id="home" class="hero">
         <div class="tech-logos">
             <div class="logo-item"><i class="fab fa-apple"></i></div>
@@ -845,7 +907,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Hi, I'm <span>Shahinsha Kolakkadan, a Flutter Dev</span></h1>
-                <p class="hero-subtitle">also <span class="typed-text">Flutter Developer</span></p>
+                <p class="hero-subtitle">also <span class="typed-text"> </span></p>
                 <p class="hero-description">Results-driven and experienced Flutter Developer with a proven track record in developing and deploying cross-platform mobile applications. Skilled in integrating third-party APIs, building responsive and user-friendly UIs, and delivering high-performance, feature-rich apps.</p>
                 <div class="hero-btns">
                     <a href="#projects" class="btn">View My Work</a>
