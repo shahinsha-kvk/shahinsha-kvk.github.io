@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Shahinsha</title>
+  <title>Shahinsha | Flutter Developer</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -14,56 +14,379 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@9.4.1/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary-color: #10b981;
+      --dark-bg: #0f172a;
+      --dark-card: #1e293b;
+      --dark-text: #f8fafc;
+      --dark-text-secondary: #cbd5e1;
+      --border-color: #334155;
+    }
 
-  <!-- =======================================================
-  * Template Name: DevFolio
-  * Updated: Nov 17 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    body {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+
+    .logo a {
+      color: var(--dark-text);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    .navbar {
+      padding: 0;
+    }
+
+    .navbar ul li a {
+      color: var(--dark-text-secondary);
+      font-weight: 500;
+      padding: 10px 15px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      color: var(--primary-color);
+    }
+
+    .hero {
+      background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('assets/img/imgff.jpg') top center;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: var(--dark-text-secondary);
+    }
+
+    .typed {
+      color: var(--primary-color);
+    }
+
+    .section-title {
+      color: var(--dark-text);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--primary-color);
+    }
+
+    .box-shadow-full {
+      background: var(--dark-card);
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      padding: 2rem;
+    }
+
+    .about-img img {
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .title-s {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+
+    .skill-mf span {
+      color: var(--dark-text);
+    }
+
+    .progress {
+      background-color: #334155;
+      height: 8px;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+    }
+
+    .progress-bar {
+      background-color: var(--primary-color);
+      border-radius: 4px;
+    }
+
+    .service-box {
+      background: var(--dark-card);
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .service-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .service-ico {
+      margin-bottom: 1rem;
+    }
+
+    .ico-circle {
+      background: var(--primary-color);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto;
+    }
+
+    .s-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .section-counter {
+      background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('assets/img/counters-bg.jpg') center center;
+      background-size: cover;
+      padding: 4rem 0;
+    }
+
+    .counter-box {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .counter-num .counter {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    .counter-text {
+      color: var(--dark-text-secondary);
+      font-size: 1rem;
+    }
+
+    .card-blog {
+      background: var(--dark-card);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      height: 100%;
+      border: 1px solid var(--border-color);
+    }
+
+    .card-blog:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-img {
+      overflow: hidden;
+    }
+
+    .card-img img {
+      transition: all 0.5s ease;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-blog:hover .card-img img {
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-title a {
+      color: var(--dark-text);
+      text-decoration: none;
+    }
+
+    .card-description {
+      color: var(--dark-text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .card-footer {
+      padding: 1rem 1.5rem;
+      background: rgba(30, 41, 59, 0.7);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .post-date {
+      color: var(--dark-text-secondary);
+      font-size: 0.85rem;
+    }
+
+    .contact-section {
+      background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('assets/img/post-3.jpg') center center;
+      background-size: cover;
+    }
+
+    .form-control {
+      background-color: #1e293b;
+      border: 1px solid var(--border-color);
+      color: var(--dark-text);
+      padding: 0.75rem 1rem;
+    }
+
+    .form-control:focus {
+      background-color: #1e293b;
+      border-color: var(--primary-color);
+      color: var(--dark-text);
+      box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+    }
+
+    .form-control::placeholder {
+      color: #64748b;
+    }
+
+    .button {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background: var(--primary-dark);
+      color: white;
+    }
+
+    .socials ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 0;
+    }
+
+    .socials ul li {
+      margin: 0 10px;
+    }
+
+    .socials ul li a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--dark-card);
+      color: var(--dark-text);
+      transition: all 0.3s ease;
+    }
+
+    .socials ul li a:hover {
+      background: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary-color);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .back-to-top:hover {
+      background: var(--primary-dark);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
-
+    <div class="container d-flex align-items-center justify-content-between py-3">
       <h1 class="logo"><a href="index.html">SHAHINSHA</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/IMG_2306.png" alt="" class="img-fluid"></a> -->
 
       <nav id="navbar" class="navbar">
-        <ul>
+        <ul class="d-flex">
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#blog">Work</a></li>
+          <li><a class="nav-link scrollto" href="#projects">Projects</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
     </div>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <div id="hero" class="hero route bg-image" style="background-image: url(assets/img/imgff.jpg)">
-    <div class="overlay-itro"></div>
-    <div class="hero-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <!--<p class="display-6 color-d">Hello, world!</p>-->
+  <div id="hero" class="hero route">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
           <h1 class="hero-title mb-4">SHAHINSHA KOLAKKADAN</h1>
           <p class="hero-subtitle"><span class="typed"
-              data-typed-items="Cross Platform App Developer,Web Developer, Freelancer, iOS Developer, Android Developer"></span></p>
+              data-typed-items="Cross Platform App Developer, Web Developer, Freelancer, iOS Developer, Android Developer"></span></p>
+          <div class="mt-4">
+            <a href="#projects" class="button me-3">View My Work</a>
+            <a href="#contact" class="button">Get In Touch</a>
+          </div>
         </div>
       </div>
     </div>
@@ -72,8 +395,8 @@
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about-mf sect-pt4 route">
-      <div class="container ">
+    <section id="about" class="about-mf sect-pt4 route py-5">
+      <div class="container">
         <div class="row">
           <div class="col-sm-12">
             <div class="box-shadow-full">
@@ -82,48 +405,47 @@
                   <div class="row">
                     <div class="col-sm-4 col-md-4">
                       <div class="about-img">
-                        <img src="assets/img/IMG_2306.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                        <img src="assets/img/IMG_2306.jpg" class="img-fluid rounded" alt="">
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-8">
                       <div class="about-info">
                         <p><span class="title-s">Name: </span> <span>SHAHINSHA KOLAKKADAN</span></p>
-                        <p><span class="title-s">Profile: </span> <span>Flutter developer</span></p>
+                        <p><span class="title-s">Profile: </span> <span>Flutter Developer</span></p>
                         <p><span class="title-s">Email: </span> <span>shahinsha676523k@gmail.com</span></p>
                         <p><span class="title-s">Phone: </span> <span>+91 9072506288</span></p>
-                        <p><span class="title-s">DOB: </span> <span> 04 09 2000</span></p>
-
+                        <p><span class="title-s">DOB: </span> <span>04 09 2000</span></p>
                       </div>
                     </div>
                   </div>
-                  <div class="skill-mf">
-                    <p class="title-s">Skill</p>
-                    <span>Flutter</span> <span class="pull-right">90%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>dart</span> <span class="pull-right">90%</span>
+                  <div class="skill-mf mt-4">
+                    <p class="title-s">Skills</p>
+                    <span>Flutter</span> <span class="float-end">90%</span>
                     <div class="progress">
                       <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90"
                         aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <span>python</span> <span class="pull-right">75%</span>
+                    <span>Dart</span> <span class="float-end">90%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span>Python</span> <span class="float-end">75%</span>
                     <div class="progress">
                       <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75"
                         aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <span>Provider</span> <span class="pull-right">85%</span>
+                    <span>Provider</span> <span class="float-end">85%</span>
                     <div class="progress">
                       <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85"
                         aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <span>bloc</span> <span class="pull-right">60%</span>
+                    <span>BLoC</span> <span class="float-end">60%</span>
                     <div class="progress">
                       <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60"
                         aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <span>GetX</span> <span class="pull-right">80%</span>
+                    <span>GetX</span> <span class="float-end">80%</span>
                     <div class="progress">
                       <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
                         aria-valuemin="0" aria-valuemax="100"></div>
@@ -133,14 +455,18 @@
                 <div class="col-md-6">
                   <div class="about-me pt-4 pt-md-0">
                     <div class="title-box-2">
-                      <h5 class="title-left">
-                        /me 😄
+                      <h5 class="title-left section-title">
+                        About Me
                       </h5>
                     </div>
                     <p class="lead">
-                      Results-driven Flutter Developer with 2 years of hands-on experience in building, and maintaining cross-platform mobile applications.
-                      Proficient in integrating REST APIs, implementing responsive UIs, managing state using Provider, GetX and BLoC.
+                      Results-driven Flutter Developer with 2 years of hands-on experience in building and maintaining cross-platform mobile applications.
+                      Proficient in integrating REST APIs, implementing responsive UIs, and managing state using Provider, GetX and BLoC.
                       Demonstrated ability to deliver high-performance apps using Firebase, Google Maps, and clean architecture principles.
+                    </p>
+                    <p class="lead mt-3">
+                      Passionate about creating efficient, user-friendly applications that solve real-world problems. 
+                      Always eager to learn new technologies and improve development processes.
                     </p>
                   </div>
                 </div>
@@ -150,84 +476,81 @@
         </div>
       </div>
     </section><!-- End About Section -->
+
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services-mf pt-5 route">
+    <section id="services" class="services-mf pt-5 route py-5">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
             <div class="title-box text-center">
-              <h3 class="title-a">
+              <h3 class="section-title">
                 Services
               </h3>
               <p class="subtitle-a">
+                What I can do for you
               </p>
-              <div class="line-mf"></div>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6">
-  <div class="service-box">
-    <div class="service-ico">
-      <span class="ico-circle"><i class="bi bi-briefcase"></i></span>
-    </div>
-    <div class="service-content">
-      <h2 class="s-title">Cross-Platform App Development</h2>
-      <p class="s-description text-center">
-        Build powerful and seamless mobile applications that run smoothly across both iOS and Android platforms using Flutter.
-      </p>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-6">
-  <div class="service-box">
-    <div class="service-ico">
-      <span class="ico-circle"><i class="bi bi-card-checklist"></i></span>
-    </div>
-    <div class="service-content">
-      <h2 class="s-title">Web Development</h2>
-      <p class="s-description text-center">
-        From dynamic websites to robust web applications, craft fast, responsive, and SEO-friendly solutions tailored the business needs.
-      </p>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-6">
-  <div class="service-box">
-    <div class="service-ico">
-      <span class="ico-circle"><i class="bi bi-binoculars"></i></span>
-    </div>
-    <div class="service-content">
-      <h2 class="s-title">Responsive Design</h2>
-      <p class="s-description text-center">
-        Designs adapt flawlessly to any device or screen size, ensuring a consistent and user-friendly experience across desktops, tablets, and smartphones.
-      </p>
-    </div>
-  </div>
-</div>
-
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="bi bi-phone"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">Cross-Platform App Development</h2>
+                <p class="s-description">
+                  Build powerful and seamless mobile applications that run smoothly across both iOS and Android platforms using Flutter.
+                </p>
+              </div>
+            </div>
+          </div>
           <div class="col-md-6">
-  <div class="service-box">
-    <div class="service-ico">
-      <span class="ico-circle"><i class="bi bi-brightness-high"></i></span>
-    </div>
-    <div class="service-content">
-      <h2 class="s-title">Graphic Design</h2>
-      <p class="s-description text-center">
-        Create visually stunning and brand-consistent designs — from logos and banners to social media graphics and marketing materials — that effectively communicate your message.
-      </p>
-    </div>
-  </div>
-</div>
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="bi bi-laptop"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">Web Development</h2>
+                <p class="s-description">
+                  From dynamic websites to robust web applications, craft fast, responsive, and SEO-friendly solutions tailored to business needs.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="bi bi-layout-text-window"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">Responsive Design</h2>
+                <p class="s-description">
+                  Designs adapt flawlessly to any device or screen size, ensuring a consistent and user-friendly experience across all platforms.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="bi bi-palette"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">UI/UX Design</h2>
+                <p class="s-description">
+                  Create visually stunning and brand-consistent designs that effectively communicate your message and enhance user experience.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section><!-- End Services Section -->
 
     <!-- ======= Counter Section ======= -->
-    <div class="section-counter paralax-mf bg-image" style="background-image: url(assets/img/counters-bg.jpg)">
-      <div class="overlay-mf"></div>
+    <div class="section-counter paralax-mf">
       <div class="container position-relative">
         <div class="row">
           <div class="col-sm-4 col-lg-4">
@@ -237,8 +560,8 @@
               </div>
               <div class="counter-num">
                 <p data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1"
-                  class="counter purecounter"></p>
-                <span class="counter-text">PROJRCTS COMPLETED</span>
+                  class="counter purecounter">10</p>
+                <span class="counter-text">PROJECTS COMPLETED</span>
               </div>
             </div>
           </div>
@@ -249,7 +572,7 @@
               </div>
               <div class="counter-num">
                 <p data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1"
-                  class="counter purecounter"></p>
+                  class="counter purecounter">2</p>
                 <span class="counter-text">YEARS OF EXPERIENCE</span>
               </div>
             </div>
@@ -261,235 +584,129 @@
               </div>
               <div class="counter-num">
                 <p data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1"
-                  class="counter purecounter"></p>
+                  class="counter purecounter">8</p>
                 <span class="counter-text">TOTAL CLIENTS</span>
               </div>
             </div>
           </div>
-
         </div>
       </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div><!-- End Testimonials Section -->
+    </div><!-- End Counter Section -->
 
-    <!-- ======= Blog Section ======= -->
- <section id="blog" class="blog-mf sect-pt4 route">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="title-box text-center">
-          <h3 class="title-a">LATEST PROJECTS</h3>
-          <p class="subtitle-a">Edu-Hub (web App)</p>
-          <div class="line-mf"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Row 1 -->
-    <div class="row">
-      <!-- Edu-Hub -->
-      <div class="col-md-6 mb-4">
-        <div class="card card-blog">
-          <div class="card-img">
-            <a href="blog-single.html"><img src="assets/img/eduhub1.jpg" class="img-fluid"></a>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title"><a href="blog-single.html">Edu-Hub</a></h3>
-            <p class="card-description">
-              A centralized online platform for an educational training center in Kerala. Supports online and offline student guidance across streams.
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="post-date"><span class="bi bi-clock"></span> 2 Months</div>
+    <!-- ======= Projects Section ======= -->
+    <section id="projects" class="blog-mf sect-pt4 route py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="section-title">LATEST PROJECTS</h3>
+              <p class="subtitle-a">A showcase of my recent work</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- EV-Chain -->
-      <div class="col-md-6 mb-4">
-        <div class="card card-blog">
-          <div class="card-img">
-            <img src="assets/img/img778.jpg" class="img-fluid">
+        <div class="row">
+          <!-- Edu-Hub -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <a href="blog-single.html"><img src="assets/img/eduhub1.jpg" alt="Edu-Hub" class="img-fluid"></a>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title"><a href="blog-single.html">Edu-Hub</a></h3>
+                <p class="card-description">
+                  A centralized online platform for an educational training center in Kerala. Supports online and offline student guidance across streams.
+                </p>
+              </div>
+              <div class="card-footer">
+                <div class="post-date"><span class="bi bi-clock"></span> 2 Months</div>
+              </div>
+            </div>
           </div>
-          <div class="card-body">
-            <h3 class="card-title">EV-Chain</h3>
-            <p class="card-description">
-              Flutter app with Python Flask backend for finding nearby EV charging stations.
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="post-date"><span class="bi bi-clock"></span> 1 Month</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Row 2 -->
-    <div class="row">
-      <!-- Classic -->
-      <div class="col-md-6 mb-4">
-        <div class="card card-blog">
-          <div class="card-img">
-            <img src="assets/img/classic.jpg" class="img-fluid">
+          <!-- EV-Chain -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <img src="assets/img/img778.jpg" alt="EV-Chain" class="img-fluid">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">EV-Chain</h3>
+                <p class="card-description">
+                  Flutter app with Python Flask backend for finding nearby EV charging stations with real-time availability.
+                </p>
+              </div>
+              <div class="card-footer">
+                <div class="post-date"><span class="bi bi-clock"></span> 1 Month</div>
+              </div>
+            </div>
           </div>
-          <div class="card-body">
-            <h3 class="card-title">Classic</h3>
-            <p class="card-description">
-              UAE cab app with PDF/QR generation, Firebase backend, and Google Maps API.
-            </p>
+
+          <!-- Classic -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <img src="assets/img/classic.jpg" alt="Classic" class="img-fluid">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Classic</h3>
+                <p class="card-description">
+                  UAE cab app with PDF/QR generation, Firebase backend, and Google Maps API integration for seamless ride booking.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <!-- ATH -->
-      <div class="col-md-6 mb-4">
-        <div class="card card-blog">
-          <div class="card-img">
-            <img src="assets/img/case.png" class="img-fluid">
+          <!-- ATH -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <img src="assets/img/case.png" alt="ATH" class="img-fluid">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">ATH</h3>
+                <p class="card-description">
+                  Emergency SOS, responsive UI, and robust deployment pipeline for a KSA banking app with enhanced security features.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="card-body">
-            <h3 class="card-title">ATH</h3>
-            <p class="card-description">
-              Emergency SOS, responsive UI, and robust deployment pipeline for a KSA banking app.
-            </p>
+
+          <!-- Logic -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <img src="assets/img/case.png" alt="Logic" class="img-fluid">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Logic (E-learning Driving App)</h3>
+                <p class="card-description">
+                  Multi-language support, animated UI, and mock exam features for learner engagement in driving education.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  <!-- Row 3 -->
-<div class="row">
-  <!-- Logic -->
-  <div class="col-md-6 mb-4">
-    <div class="card card-blog">
-      <div class="card-img">
-        <img src="assets/img/case.png" alt="Logic" class="img-fluid">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">Logic (E-learning Driving App, IND)</h3>
-        <p class="card-description">
-          Multi-language support, animated UI, and mock exam features for learner engagement.
-        </p>
-      </div>
-    </div>
-  </div>
-  <!-- Wareaxis -->
-  <div class="col-md-6 mb-4">
-    <div class="card card-blog">
-      <div class="card-img">
-        <img src="assets/img/case.png" alt="Wareaxis" class="img-fluid">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">Wareaxis (Warehouse App)</h3>
-        <p class="card-description">
-          Real-time push notifications, responsive UI, and 30% improved app performance through lazy loading and widget optimization.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-    
-  <div class="row">
-  <!-- IBIS ERP -->
-  <div class="col-md-6 mb-4">
-    <div class="card card-blog">
-      <div class="card-img">
-        <img src="assets/img/case.png" alt="IBIS ERP" class="img-fluid">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">IBIS ERP</h3>
-        <p class="card-description">
-          Complete mobile ERP solution with PDF generation, UI pagination, and adaptive layouts for enterprise scalability.
-        </p>
-      </div>
-    </div>
-  </div>
 
-  <!-- Secure ATH -->
-  <div class="col-md-6 mb-4">
-    <div class="card card-blog">
-      <div class="card-img">
-        <img src="assets/img/case.png" alt="Secure ATH" class="img-fluid">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">Secure ATH</h3>
-        <p class="card-description">
-          Enabled secure QR-based check-ins with in-app camera validation for user identity verification.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-    
- <!-- Delivera & Pets Digital in one row -->
-<div class="row">
-  <!-- Delivera -->
-  <div class="col-md-6 mb-4">
-    <div class="card card-blog">
-      <div class="card-img">
-        <img src="assets/img/case.png" alt="Delivera" class="img-fluid">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">Delivera (Delivery App)</h3>
-        <p class="card-description">
-          Features include route tracking, Google Maps integration, and infinite scrolling using lazy loading for optimized delivery management.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Pets Digital -->
-  <div class="col-md-6 mb-4">
-    <div class="card card-blog">
-      <div class="card-img">
-        <img src="assets/img/case.png" alt="Pets Digital" class="img-fluid">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">Pets Digital</h3>
-        <p class="card-description">
-          A digital marketplace for pet lovers and breeders to buy, sell, or adopt pets—built similar to OLX but tailored for the pet community.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <!-- GabZing -->
-  <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-      <div class="card card-blog">
-        <div class="card-img">
-          <a href="blog-single.html">
-            <img src="assets/img/UI1.jpg" alt="GabZing" class="img-fluid">
-          </a>
-        </div>
-        <div class="card-body">
-          <h3 class="card-title"><a href="blog-single.html">GabZing</a></h3>
-          <p class="card-description">
-            Flutter app for Crypto dashboard. Developed application having user authentication from API using Flutter Secure Storage. Displayed data from a hard-coded model. Implemented search, filter, and logout features.
-          </p>
-        </div>
-        <div class="card-footer">
-          <div class="post-date">
-            <span class="bi bi-clock"></span> 1 Week
+          <!-- Wareaxis -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <img src="assets/img/case.png" alt="Wareaxis" class="img-fluid">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Wareaxis (Warehouse App)</h3>
+                <p class="card-description">
+                  Real-time push notifications, responsive UI, and 30% improved app performance through optimization techniques.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-    </section><!-- End Blog Section -->
+    </section><!-- End Projects Section -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route"
-      style="background-image: url(assets/img/post-3.jpg)">
+    <section id="contact" class="contact-section paralax-mf footer-paralax bg-image sect-mt4 route py-5">
       <div class="overlay-mf"></div>
       <div class="container">
         <div class="row">
@@ -499,7 +716,7 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="title-box-2">
-                      <h5 class="title-left">
+                      <h5 class="title-left section-title">
                         Send Message
                       </h5>
                     </div>
@@ -536,8 +753,7 @@
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                           </div>
                           <div class="col-md-12 text-center">
-                            <button type="submit" class="button button-a button-big button-rouded">Send Message, For a
-                              quicker response, connect with us on social media</button>
+                            <button type="submit" class="button">Send Message</button>
                           </div>
                         </div>
                       </form>
@@ -545,13 +761,13 @@
                   </div>
                   <div class="col-md-6">
                     <div class="title-box-2 pt-4 pt-md-0">
-                      <h5 class="title-left">
+                      <h5 class="title-left section-title">
                         Get in Touch
                       </h5>
                     </div>
                     <div class="more-info">
                       <p class="lead">
-                        If anyone need any help,submit a query or follow me on any socialmedia platform.
+                        If you need any help with your project or have any questions, feel free to reach out. I'm always open to discussing new opportunities.
                       </p>
                       <ul class="list-ico">
                         <li><span class="bi bi-geo-alt"></span> Calicut, Kerala, India 676523</li>
@@ -582,20 +798,73 @@
 
   </main><!-- End #main -->
 
-  <div id="preloader"></div>
+  <!-- ======= Footer ======= -->
+  <footer class="text-center py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p>© Copyright <strong>Shahinsha</strong>. All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9.4.1/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script>
+    // Initialize PureCounter
+    new PureCounter();
+
+    // Initialize Typed.js
+    document.addEventListener('DOMContentLoaded', function() {
+      var typed = new Typed('.typed', {
+        strings: ['Cross Platform App Developer', 'Web Developer', 'Freelancer', 'iOS Developer', 'Android Developer'],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 2000,
+        loop: true
+      });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 100) {
+        header.style.backgroundColor = 'rgba(15, 23, 42, 0.95)';
+        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+      } else {
+        header.style.backgroundColor = 'transparent';
+        header.style.boxShadow = 'none';
+      }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 70,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 
 </body>
 
