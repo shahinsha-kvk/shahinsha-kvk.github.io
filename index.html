@@ -253,7 +253,6 @@
             color: var(--dark-text-secondary);
         }
 
-      
         /* Services Section - Minimal */
         .services-grid {
             display: grid;
@@ -652,10 +651,6 @@
         }
 
         @media (max-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
             .contact-content {
                 grid-template-columns: 1fr;
             }
@@ -770,7 +765,6 @@
                 <a href="#" class="logo">Shahinsha<span>.</span></a>
                 <ul class="nav-links">
                     <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -816,63 +810,6 @@
                 <div class="stat-card">
                     <div class="stat-number">150+</div>
                     <div class="stat-text">Countries</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p class="section-subtitle">Get to know me better</p>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Shahinsha Kolakkadan">
-                </div>
-                <div class="about-text">
-                    <h3>Flutter Developer & Mobile App Specialist</h3>
-                    <p>I'm a passionate Flutter developer with expertise in creating beautiful, functional, and user-friendly mobile applications for both iOS and Android platforms.</p>
-                    <p>With over 2 years of professional experience, I've worked on various projects ranging from e-commerce apps to complex enterprise solutions. I'm proficient in state management solutions like Provider, GetX, and BLoC, and I have experience integrating various APIs and third-party services.</p>
-                    
-                    <div class="skills">
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Flutter & Dart</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Firebase</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>REST APIs</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>UI/UX Design</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1591,33 +1528,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             if (textArray.length) setTimeout(type, newTextDelay + 250);
         });
-        
-        // Skill Bar Animation
-        const skillBars = document.querySelectorAll('.skill-progress');
-        
-        function animateSkillBars() {
-            skillBars.forEach(skillBar => {
-                const width = skillBar.style.width;
-                skillBar.style.width = '0';
-                
-                setTimeout(() => {
-                    skillBar.style.width = width;
-                }, 500);
-            });
-        }
-        
-        // Animate skill bars when they come into view
-        const aboutSection = document.getElementById('about');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateSkillBars();
-                    observer.unobserve(aboutSection);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        observer.observe(aboutSection);
         
         // Horizontal Gallery Navigation
         document.querySelectorAll('.gallery-nav').forEach(button => {
