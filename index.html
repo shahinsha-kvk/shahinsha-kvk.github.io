@@ -224,6 +224,35 @@
             color: white;
         }
 
+        /* Stats Section */
+        .stats-section {
+            background: var(--dark-card);
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-text {
+            font-size: 1.1rem;
+            color: var(--dark-text-secondary);
+        }
+
         /* About Section */
         .about-content {
             display: grid;
@@ -281,16 +310,16 @@
             transition: width 1s ease;
         }
 
-        /* Services Section */
+        /* Services Section - Minimal */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
 
         .service-card {
             background: var(--dark-card);
-            padding: 30px;
+            padding: 40px 30px;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -298,33 +327,38 @@
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         .service-icon {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background: rgba(108, 99, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: var(--primary);
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 15px;
         }
 
         .service-card p {
             color: var(--dark-text-secondary);
+            font-size: 0.95rem;
         }
 
-        /* Projects Section - IMPROVED */
+        /* Projects Section - IMPROVED with Horizontal Scrolling */
+        .projects-container {
+            position: relative;
+        }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -380,25 +414,45 @@
 
         .project-body {
             display: flex;
+            flex-direction: column;
             flex: 1;
             padding: 0;
         }
 
-        .project-device {
-            flex: 0 0 45%;
+        /* Horizontal Scroll Gallery */
+        .project-gallery {
+            position: relative;
+            padding: 20px 0;
+            background: #000;
+        }
+
+        .gallery-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 20px;
+            padding: 0 20px;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+
+        .gallery-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        .gallery-item {
+            flex: 0 0 auto;
+            width: 280px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #000;
-            padding: 20px;
-            position: relative;
         }
 
         .iphone-frame {
             position: relative;
             width: 100%;
-            max-width: 220px;
-            height: 450px;
+            max-width: 250px;
+            height: 500px;
             background: #111;
             border-radius: 30px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
@@ -430,6 +484,37 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(108, 99, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-nav:hover {
+            background: var(--primary);
+        }
+
+        .gallery-nav.prev {
+            left: 10px;
+        }
+
+        .gallery-nav.next {
+            right: 10px;
         }
 
         .project-details {
@@ -620,18 +705,9 @@
                 gap: 30px;
             }
             
-            .project-body {
-                flex-direction: column;
-            }
-            
-            .project-device {
-                flex: 0 0 auto;
-                height: 350px;
-            }
-            
             .iphone-frame {
-                max-width: 200px;
-                height: 400px;
+                max-width: 220px;
+                height: 440px;
             }
         }
 
@@ -650,6 +726,14 @@
             
             .features-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -694,13 +778,17 @@
                 margin-left: 0;
             }
             
-            .project-device {
-                height: 300px;
+            .iphone-frame {
+                max-width: 200px;
+                height: 400px;
             }
             
-            .iphone-frame {
-                max-width: 180px;
-                height: 360px;
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -717,17 +805,19 @@
                 font-size: 1.2rem;
             }
             
-            .project-device {
-                height: 250px;
-            }
-            
             .iphone-frame {
-                max-width: 150px;
-                height: 300px;
+                max-width: 180px;
+                height: 360px;
             }
             
             .project-links {
                 flex-direction: column;
+            }
+            
+            .gallery-nav {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -762,6 +852,30 @@
                 <div class="hero-btns">
                     <a href="#projects" class="btn">View My Work</a>
                     <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">12+</div>
+                    <div class="stat-text">Apps Published</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1M+</div>
+                    <div class="stat-text">Total Downloads</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4.8</div>
+                    <div class="stat-text">App Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-text">Countries</div>
                 </div>
             </div>
         </div>
@@ -824,7 +938,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section - Minimal -->
     <section id="services">
         <div class="container">
             <h2 class="section-title">My Services</h2>
@@ -851,18 +965,11 @@
                     <h3>UI/UX Design</h3>
                     <p>Designing intuitive and visually appealing user interfaces that enhance user experience.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>API Integration</h3>
-                    <p>Seamlessly integrating third-party APIs and services to extend application functionality.</p>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section - IMPROVED -->
+    <!-- Projects Section - IMPROVED with Horizontal Scrolling -->
     <section id="projects">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
@@ -878,13 +985,43 @@
                         <p class="project-description">Cab Service App with route tracking, PDF/QR generation, Firebase backend and Google Maps integration.</p>
                     </div>
                     <div class="project-body">
-                        <div class="project-device">
-                            <div class="iphone-frame">
-                                <div class="iphone-notch"></div>
-                                <div class="iphone-screen">
-                                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Classic App">
+                        <div class="project-gallery">
+                            <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="gallery-container" id="classic-gallery">
+                                <div class="gallery-item">
+                                    <div class="iphone-frame">
+                                        <div class="iphone-notch"></div>
+                                        <div class="iphone-screen">
+                                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Classic App">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item">
+                                    <div class="iphone-frame">
+                                        <div class="iphone-notch"></div>
+                                        <div class="iphone-screen">
+                                            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="Classic App Screen 2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item">
+                                    <div class="iphone-frame">
+                                        <div class="iphone-notch"></div>
+                                        <div class="iphone-screen">
+                                            <img src="https://images.unsplash.com/photo-1547658718-1cda82c6c5c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="Classic App Screen 3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item">
+                                    <div class="iphone-frame">
+                                        <div class="iphone-notch"></div>
+                                        <div class="iphone-screen">
+                                            <img src="https://images.unsplash.com/photo-1547658718-1cda82c6c5c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="Classic App Screen 4">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            <button class="gallery-nav next"><i class="fas fa-chevron-right"></i></button>
                         </div>
                         <div class="project-details">
                             <div class="project-features">
@@ -919,13 +1056,43 @@
                         <p class="project-description">National Bank Guest App with Emergency SOS, responsive UI, and Play Store/App Store deployment.</p>
                     </div>
                     <div class="project-body">
-                        <div class="project-device">
-                            <div class="iphone-frame">
-                                <div class="iphone-notch"></div>
-                                <div class="iphone-screen">
-                                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="ATH App">
+                        <div class="project-gallery">
+                            <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="gallery-container" id="ath-gallery">
+                                <div class="gallery-item">
+                                    <div class="iphone-frame">
+                                        <div class="iphone-notch"></div>
+                                        <div class="iphone-screen">
+                                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="ATH App">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item">
+                                    <div class="iphone-frame">
+                                        <div class="iphone-notch"></div>
+                                        <div class="iphone-screen">
+                                            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="ATH App Screen 2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item">
+                                    <div class="iphone-frame">
+                                        <div class="iphone-notch"></div>
+                                        <div class="iphone-screen">
+                                            <img src="https://images.unsplash.com/photo-1547658718-1cda82c6c5c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="ATH App Screen 3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item">
+                                    <div class="iphone-frame">
+                                        <div class="iphone-notch"></div>
+                                        <div class="iphone-screen">
+                                            <img src="https://images.unsplash.com/photo-1547658718-1cda82c6c5c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="ATH App Screen 4">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            <button class="gallery-nav next"><i class="fas fa-chevron-right"></i></button>
                         </div>
                         <div class="project-details">
                             <div class="project-features">
@@ -941,247 +1108,6 @@
                                 <div class="project-stat"><i class="fas fa-chart-line"></i> 75% crash reduction</div>
                                 <div class="project-stat"><i class="fas fa-shield-alt"></i> Enhanced security features</div>
                                 <div class="project-stat"><i class="fas fa-bolt"></i> Fast performance</div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Logic -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>Logic</h3>
-                            <span class="project-country">IND</span>
-                        </div>
-                        <p class="project-description">E-learning driving App with multi-language support, animated UI, and mock exam features.</p>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-device">
-                            <div class="iphone-frame">
-                                <div class="iphone-notch"></div>
-                                <div class="iphone-screen">
-                                    <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Logic App">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-features">
-                                <h4>Key Features</h4>
-                                <div class="features-grid">
-                                    <span class="project-feature">Multi-language</span>
-                                    <span class="project-feature">Animated UI</span>
-                                    <span class="project-feature">Mock Exams</span>
-                                    <span class="project-feature">Progress Tracking</span>
-                                </div>
-                            </div>
-                            <div class="project-stats">
-                                <div class="project-stat"><i class="fas fa-language"></i> 5+ languages supported</div>
-                                <div class="project-stat"><i class="fas fa-graduation-cap"></i> 1000+ practice questions</div>
-                                <div class="project-stat"><i class="fas fa-chart-bar"></i> Performance analytics</div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Wareaxis -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>Wareaxis</h3>
-                        </div>
-                        <p class="project-description">Warehouse App with real-time push notifications, responsive UI, and optimized performance.</p>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-device">
-                            <div class="iphone-frame">
-                                <div class="iphone-notch"></div>
-                                <div class="iphone-screen">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Wareaxis App">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-features">
-                                <h4>Key Features</h4>
-                                <div class="features-grid">
-                                    <span class="project-feature">Push Notifications</span>
-                                    <span class="project-feature">Responsive UI</span>
-                                    <span class="project-feature">Inventory Management</span>
-                                    <span class="project-feature">Barcode Scanning</span>
-                                </div>
-                            </div>
-                            <div class="project-stats">
-                                <div class="project-stat"><i class="fas fa-tachometer-alt"></i> 30% performance improvement</div>
-                                <div class="project-stat"><i class="fas fa-bell"></i> Real-time alerts</div>
-                                <div class="project-stat"><i class="fas fa-database"></i> Efficient data sync</div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- IBIS ERP -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>IBIS ERP</h3>
-                        </div>
-                        <p class="project-description">Complete Mobile ERP solution with PDF generation, UI pagination, and adaptive layouts.</p>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-device">
-                            <div class="iphone-frame">
-                                <div class="iphone-notch"></div>
-                                <div class="iphone-screen">
-                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="IBIS ERP App">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-features">
-                                <h4>Key Features</h4>
-                                <div class="features-grid">
-                                    <span class="project-feature">ERP Solution</span>
-                                    <span class="project-feature">PDF Generation</span>
-                                    <span class="project-feature">UI Pagination</span>
-                                    <span class="project-feature">Adaptive Layouts</span>
-                                </div>
-                            </div>
-                            <div class="project-stats">
-                                <div class="project-stat"><i class="fas fa-file-pdf"></i> Dynamic PDF reports</div>
-                                <div class="project-stat"><i class="fas fa-table"></i> Data pagination</div>
-                                <div class="project-stat"><i class="fas fa-mobile-alt"></i> Tablet & mobile optimized</div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Secure ATH -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>Secure ATH</h3>
-                        </div>
-                        <p class="project-description">QR-based secure check-ins with in-app camera validation for user identity verification.</p>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-device">
-                            <div class="iphone-frame">
-                                <div class="iphone-notch"></div>
-                                <div class="iphone-screen">
-                                    <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Secure ATH App">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-features">
-                                <h4>Key Features</h4>
-                                <div class="features-grid">
-                                    <span class="project-feature">QR Check-ins</span>
-                                    <span class="project-feature">Camera Validation</span>
-                                    <span class="project-feature">Security</span>
-                                    <span class="project-feature">Identity Verification</span>
-                                </div>
-                            </div>
-                            <div class="project-stats">
-                                <div class="project-stat"><i class="fas fa-qrcode"></i> Fast QR scanning</div>
-                                <div class="project-stat"><i class="fas fa-camera"></i> In-app camera validation</div>
-                                <div class="project-stat"><i class="fas fa-user-shield"></i> Secure authentication</div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Delivera -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>Delivera</h3>
-                        </div>
-                        <p class="project-description">Delivery App with route tracking, Google Maps integration, and infinite scrolling (lazy loading).</p>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-device">
-                            <div class="iphone-frame">
-                                <div class="iphone-notch"></div>
-                                <div class="iphone-screen">
-                                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Delivera App">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-features">
-                                <h4>Key Features</h4>
-                                <div class="features-grid">
-                                    <span class="project-feature">Route Tracking</span>
-                                    <span class="project-feature">Google Maps</span>
-                                    <span class="project-feature">Infinite Scroll</span>
-                                    <span class="project-feature">Lazy Loading</span>
-                                </div>
-                            </div>
-                            <div class="project-stats">
-                                <div class="project-stat"><i class="fas fa-map-marked-alt"></i> Real-time route optimization</div>
-                                <div class="project-stat"><i class="fas fa-shipping-fast"></i> Efficient delivery management</div>
-                                <div class="project-stat"><i class="fas fa-infinity"></i> Smooth infinite scrolling</div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pets Digital -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>Pets Digital</h3>
-                        </div>
-                        <p class="project-description">A digital marketplace for pet lovers, breeders, and adopters to buy and sell pets.</p>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-device">
-                            <div class="iphone-frame">
-                                <div class="iphone-notch"></div>
-                                <div class="iphone-screen">
-                                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pets Digital App">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-features">
-                                <h4>Key Features</h4>
-                                <div class="features-grid">
-                                    <span class="project-feature">Marketplace</span>
-                                    <span class="project-feature">Pet Adoption</span>
-                                    <span class="project-feature">Breeders</span>
-                                    <span class="project-feature">E-commerce</span>
-                                </div>
-                            </div>
-                            <div class="project-stats">
-                                <div class="project-stat"><i class="fas fa-paw"></i> Pet profile management</div>
-                                <div class="project-stat"><i class="fas fa-search"></i> Advanced search filters</div>
-                                <div class="project-stat"><i class="fas fa-heart"></i> Adoption matching</div>
                             </div>
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -1371,6 +1297,20 @@
         }, { threshold: 0.5 });
         
         observer.observe(aboutSection);
+        
+        // Horizontal Gallery Navigation
+        document.querySelectorAll('.gallery-nav').forEach(button => {
+            button.addEventListener('click', function() {
+                const gallery = this.parentElement.querySelector('.gallery-container');
+                const scrollAmount = 300;
+                
+                if (this.classList.contains('prev')) {
+                    gallery.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                } else {
+                    gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
+            });
+        });
     </script>
 </body>
 </html>
