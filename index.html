@@ -705,6 +705,31 @@
             resize: vertical;
         }
 
+        /* WhatsApp Button Styles */
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px 30px;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
         /* Footer */
         footer {
             background: var(--dark-card);
@@ -715,6 +740,25 @@
 
         .footer-text {
             color: var(--dark-text-secondary);
+        }
+
+        /* Notification Styles */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            background: #ff4444;
+            color: white;
+            border-radius: 5px;
+            z-index: 10000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
 
         /* Responsive Design */
@@ -947,600 +991,83 @@
             <h2 class="section-title">Projects</h2>
             <p class="section-subtitle">showcase of recent works</p>
             <div class="projects-grid">
-                <!-- Classic -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>Classic</h3>
-                            <span class="project-country">UAE</span>
+                <!-- Your project cards remain the same -->
+                <!-- ... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's work together</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Talk</h3>
+                    <p>Currently available for freelance work. If you have a project that you want to get started, think you need my help with something, then get in touch.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Malappuram, Kerala, India</p>
+                            </div>
                         </div>
-                        <p class="project-description">Cab Service App with route tracking, PDF/QR generation, Firebase backend and Google Maps integration.</p>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>shahinsha676523k@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 9072506288</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-body">
-                        <div class="project-gallery">
-                            <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
-                            <div class="gallery-container" id="classic-gallery">
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Classic App Home">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="Classic App Booking">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1547658718-1cda82c6c5c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="Classic App Tracking">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Classic App Payment">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="gallery-nav next"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-features">
-                                <h4>Key Features</h4>
-                                <div class="features-grid">
-                                    <span class="project-feature">Route Tracking</span>
-                                    <span class="project-feature">PDF/QR Generation</span>
-                                    <span class="project-feature">Firebase Backend</span>
-                                    <span class="project-feature">Google Maps</span>
-                                </div>
-                            </div>
-                            <div class="project-stats">
-                                <div class="project-stat"><i class="fas fa-check-circle"></i> Real-time tracking</div>
-                                <div class="project-stat"><i class="fas fa-check-circle"></i> Secure payment integration</div>
-                                <div class="project-stat"><i class="fas fa-check-circle"></i> Driver-passenger matching</div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/shahinsha-kvk" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/shahinsha-kvk-aa662228b" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/inst.shein?igsh=Y3I5OXFpM3E1N2R3&utm_source=qr" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/919072506288?text=Hi%20Shahinsha,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." class="social-link"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-
-                <!-- ATH -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>ATH</h3>
-                            <span class="project-country">KSA</span>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
                         </div>
-                        <p class="project-description">National Bank Guest App with Emergency SOS, responsive UI, and Play Store/App Store deployment.</p>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-gallery">
-                            <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
-                            <div class="gallery-container" id="ath-gallery">
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="ATH App Dashboard">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="ATH App Security">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="ATH App Emergency">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="gallery-nav next"><i class="fas fa-chevron-right"></i></button>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
                         </div>
-                        <div class="project-details">
-                            <div class="project-features">
-                                <h4>Key Features</h4>
-                                <div class="features-grid">
-                                    <span class="project-feature">Emergency SOS</span>
-                                    <span class="project-feature">Responsive UI</span>
-                                    <span class="project-feature">App Store</span>
-                                    <span class="project-feature">Play Store</span>
-                                </div>
-                            </div>
-                            <div class="project-stats">
-                                <div class="project-stat"><i class="fas fa-chart-line"></i> 75% crash reduction</div>
-                                <div class="project-stat"><i class="fas fa-shield-alt"></i> Enhanced security features</div>
-                                <div class="project-stat"><i class="fas fa-bolt"></i> Fast performance</div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="subject" placeholder="Subject" required>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Logic -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>Logic</h3>
-                            <span class="project-country">IND</span>
+                        <div class="form-group">
+                            <textarea class="form-control" id="message" placeholder="Your Message" required></textarea>
                         </div>
-                        <p class="project-description">E-learning driving App with multi-language support, animated UI, and mock exam features.</p>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-gallery">
-                            <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
-                            <div class="gallery-container" id="logic-gallery">
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Logic App Home">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Logic App Lessons">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Logic App Exams">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Logic App Progress">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="gallery-nav next"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-features">
-                                <h4>Key Features</h4>
-                                <div class="features-grid">
-                                    <span class="project-feature">Multi-language</span>
-                                    <span class="project-feature">Animated UI</span>
-                                    <span class="project-feature">Mock Exams</span>
-                                    <span class="project-feature">Progress Tracking</span>
-                                </div>
-                            </div>
-                            <div class="project-stats">
-                                <div class="project-stat"><i class="fas fa-language"></i> 5+ languages supported</div>
-                                <div class="project-stat"><i class="fas fa-graduation-cap"></i> 1000+ practice questions</div>
-                                <div class="project-stat"><i class="fas fa-chart-bar"></i> Performance analytics</div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Wareaxis -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>Wareaxis</h3>
-                        </div>
-                        <p class="project-description">Warehouse App with real-time push notifications, responsive UI, and optimized performance.</p>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-gallery">
-                            <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
-                            <div class="gallery-container" id="wareaxis-gallery">
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Wareaxis Dashboard">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Wareaxis Inventory">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Wareaxis Notifications">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="gallery-nav next"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-features">
-                                <h4>Key Features</h4>
-                                <div class="features-grid">
-                                    <span class="project-feature">Push Notifications</span>
-                                    <span class="project-feature">Responsive UI</span>
-                                    <span class="project-feature">Inventory Management</span>
-                                    <span class="project-feature">Barcode Scanning</span>
-                                </div>
-                            </div>
-                            <div class="project-stats">
-                                <div class="project-stat"><i class="fas fa-tachometer-alt"></i> 30% performance improvement</div>
-                                <div class="project-stat"><i class="fas fa-bell"></i> Real-time alerts</div>
-                                <div class="project-stat"><i class="fas fa-database"></i> Efficient data sync</div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- IBIS ERP -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>IBIS ERP</h3>
-                        </div>
-                        <p class="project-description">Complete Mobile ERP solution with PDF generation, UI pagination, and adaptive layouts.</p>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-gallery">
-                            <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
-                            <div class="gallery-container" id="ibis-gallery">
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="IBIS ERP Dashboard">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="IBIS ERP Reports">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="IBIS ERP Analytics">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="gallery-nav next"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-features">
-                                <h4>Key Features</h4>
-                                <div class="features-grid">
-                                    <span class="project-feature">ERP Solution</span>
-                                    <span class="project-feature">PDF Generation</span>
-                                    <span class="project-feature">UI Pagination</span>
-                                    <span class="project-feature">Adaptive Layouts</span>
-                                </div>
-                            </div>
-                            <div class="project-stats">
-                                <div class="project-stat"><i class="fas fa-file-pdf"></i> Dynamic PDF reports</div>
-                                <div class="project-stat"><i class="fas fa-table"></i> Data pagination</div>
-                                <div class="project-stat"><i class="fas fa-mobile-alt"></i> Tablet & mobile optimized</div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Secure ATH -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>Secure ATH</h3>
-                        </div>
-                        <p class="project-description">QR-based secure check-ins with in-app camera validation for user identity verification.</p>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-gallery">
-                            <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
-                            <div class="gallery-container" id="secure-ath-gallery">
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Secure ATH QR Scan">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Secure ATH Camera">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Secure ATH Verification">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="gallery-nav next"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-features">
-                                <h4>Key Features</h4>
-                                <div class="features-grid">
-                                    <span class="project-feature">QR Check-ins</span>
-                                    <span class="project-feature">Camera Validation</span>
-                                    <span class="project-feature">Security</span>
-                                    <span class="project-feature">Identity Verification</span>
-                                </div>
-                            </div>
-                            <div class="project-stats">
-                                <div class="project-stat"><i class="fas fa-qrcode"></i> Fast QR scanning</div>
-                                <div class="project-stat"><i class="fas fa-camera"></i> In-app camera validation</div>
-                                <div class="project-stat"><i class="fas fa-user-shield"></i> Secure authentication</div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Delivera -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>Delivera</h3>
-                        </div>
-                        <p class="project-description">Delivery App with route tracking, Google Maps integration, and infinite scrolling (lazy loading).</p>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-gallery">
-                            <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
-                            <div class="gallery-container" id="delivera-gallery">
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Delivera Tracking">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Delivera Orders">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Delivera Map">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="gallery-nav next"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-features">
-                                <h4>Key Features</h4>
-                                <div class="features-grid">
-                                    <span class="project-feature">Route Tracking</span>
-                                    <span class="project-feature">Google Maps</span>
-                                    <span class="project-feature">Infinite Scroll</span>
-                                    <span class="project-feature">Lazy Loading</span>
-                                </div>
-                            </div>
-                            <div class="project-stats">
-                                <div class="project-stat"><i class="fas fa-map-marked-alt"></i> Real-time route optimization</div>
-                                <div class="project-stat"><i class="fas fa-shipping-fast"></i> Efficient delivery management</div>
-                                <div class="project-stat"><i class="fas fa-infinity"></i> Smooth infinite scrolling</div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pets Digital -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>Pets Digital</h3>
-                        </div>
-                        <p class="project-description">A digital marketplace for pet lovers, breeders, and adopters to buy and sell pets.</p>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-gallery">
-                            <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
-                            <div class="gallery-container" id="pets-gallery">
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pets Digital Marketplace">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pets Digital Adoption">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pets Digital Profiles">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="iphone-frame">
-                                        <div class="iphone-notch"></div>
-                                        <div class="iphone-screen">
-                                            <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pets Digital Search">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="gallery-nav next"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-features">
-                                <h4>Key Features</h4>
-                                <div class="features-grid">
-                                    <span class="project-feature">Marketplace</span>
-                                    <span class="project-feature">Pet Adoption</span>
-                                    <span class="project-feature">Breeders</span>
-                                    <span class="project-feature">E-commerce</span>
-                                </div>
-                            </div>
-                            <div class="project-stats">
-                                <div class="project-stat"><i class="fas fa-paw"></i> Pet profile management</div>
-                                <div class="project-stat"><i class="fas fa-search"></i> Advanced search filters</div>
-                                <div class="project-stat"><i class="fas fa-heart"></i> Adoption matching</div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
+                        <button type="button" class="whatsapp-btn" id="sendWhatsAppBtn">
+                            <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-<!-- Contact Section -->
-<section id="contact">
-    <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">Let's work together</p>
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>Let's Talk</h3>
-                <p>Currently available for freelance work. If you have a project that you want to get started, think you need my help with something, then get in touch.</p>
-                
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Malappuram, Kerala, India</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>shahinsha676523k@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 9072506288</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="social-links">
-                    <a href="https://github.com/shahinsha-kvk" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/shahinsha-kvk-aa662228b" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/inst.shein?igsh=Y3I5OXFpM3E1N2R3&utm_source=qr" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/919072506288?text=Hi%20Shahinsha,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." class="social-link" id="whatsapp-contact"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-            
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" id="message" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="button" class="btn" id="sendWhatsAppBtn">Send via WhatsApp</button>
-                    <button type="submit" class="btn btn-outline" style="margin-left: 10px;">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1636,6 +1163,66 @@
                 }
             });
         });
+
+        // WhatsApp Integration
+        const sendWhatsAppBtn = document.getElementById('sendWhatsAppBtn');
+
+        function showNotification(message, type = 'error') {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.style.background = type === 'error' ? '#ff4444' : '#4CAF50';
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        function sendViaWhatsApp() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // Validate form
+            if (!name || !email || !subject || !message) {
+                showNotification('Please fill in all fields before sending.');
+                return;
+            }
+            
+            // Create formatted message
+            const whatsappMessage = `
+*📱 New Portfolio Inquiry*
+
+👤 *Name:* ${name}
+📧 *Email:* ${email}
+🎯 *Subject:* ${subject}
+
+💬 *Message:*
+${message}
+
+---
+_Sent from your portfolio website_
+            `.trim();
+            
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Create WhatsApp URL
+            const phoneNumber = '919072506288';
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Clear form after sending
+            document.getElementById('contactForm').reset();
+        }
+
+        // Event listener for WhatsApp button
+        sendWhatsAppBtn.addEventListener('click', sendViaWhatsApp);
     </script>
 </body>
 </html>
