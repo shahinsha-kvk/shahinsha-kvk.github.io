@@ -1147,7 +1147,29 @@
                         <p class="project-description">National Bank Guest App with Emergency SOS, responsive UI, and Play Store/App Store deployment.</p>
                     </div>
                     <div class="">
-                        <div class="project-gallery">
+                         <!-- Gallery -->
+        <div class="project-gallery">
+            <button class="gallery-nav prev" onclick="slideGallery('ath', -1)">
+                ‹
+            </button>
+
+            <div class="gallery-container" id="ath-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/case.png" alt="ATH Dashboard" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/case.png" alt="ATH Security" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/case.png" alt="ATH Emergency" class="gallery-image">
+                </div>
+            </div>
+
+            <button class="gallery-nav next" onclick="slideGallery('ath', 1)">
+                ›
+            </button>
+        </div>
+                        <!-- <div class="project-gallery">
                             <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
                             <div class="gallery-container" id="ath-gallery">
                                 <div class="gallery-item">
@@ -1176,7 +1198,7 @@
                                 </div>
                             </div>
                             <button class="gallery-nav next"><i class="fas fa-chevron-right"></i></button>
-                        </div>
+                        </div> -->
                         <div class="project-details">
                             <div class="project-features">
                                 <h4>Key Features</h4>
