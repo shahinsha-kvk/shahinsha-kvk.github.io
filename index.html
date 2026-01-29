@@ -431,7 +431,7 @@
             line-height: 1.5;
         }
 
-        .project-body {
+        . {
             display: flex;
             flex-direction: column;
             flex: 1;
@@ -444,7 +444,13 @@
             padding: 20px 0;
             background: #000;
         }
-
+/* .project-gallery {
+    position: relative;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 16px;
+    height: 260px;
+} */
         .gallery-container {
             display: flex;
             overflow-x: auto;
@@ -458,7 +464,11 @@
         .gallery-container::-webkit-scrollbar {
             display: none; /* Chrome, Safari, Opera */
         }
-
+/* .gallery-container {
+    display: flex;
+    height: 100%;
+    transition: transform 0.4s ease;
+} */
         .gallery-item {
             flex: 0 0 auto;
             width: 280px;
@@ -466,7 +476,12 @@
             align-items: center;
             justify-content: center;
         }
-
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fills container */
+    border-radius: 16px;
+}
         .iphone-frame {
             position: relative;
             width: 100%;
@@ -1000,7 +1015,7 @@
                         </div>
                         <p class="project-description">Cab Service App with route tracking, PDF/QR generation, Firebase backend and Google Maps integration.</p>
                     </div>
-                    <div class="project-body">
+                    <div class="">
                         <div class="project-gallery">
                             <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
                             <div class="gallery-container" id="classic-gallery">
@@ -1074,7 +1089,7 @@
         </p>
     </div>
 
-    <div class="project-body">
+    <div class="">
         <!-- Gallery -->
         <div class="project-gallery">
             <button class="gallery-nav prev" onclick="slideGallery('ath', -1)">
@@ -1131,7 +1146,7 @@
                         </div>
                         <p class="project-description">National Bank Guest App with Emergency SOS, responsive UI, and Play Store/App Store deployment.</p>
                     </div>
-                    <div class="project-body">
+                    <div class="">
                         <div class="project-gallery">
                             <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
                             <div class="gallery-container" id="ath-gallery">
@@ -1194,7 +1209,7 @@
                         </div>
                         <p class="project-description">E-learning driving App with multi-language support, animated UI, and mock exam features.</p>
                     </div>
-                    <div class="project-body">
+                    <div class="">
                         <div class="project-gallery">
                             <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
                             <div class="gallery-container" id="logic-gallery">
@@ -1264,7 +1279,7 @@
                         </div>
                         <p class="project-description">Warehouse App with real-time push notifications, responsive UI, and optimized performance.</p>
                     </div>
-                    <div class="project-body">
+                    <div class="">
                         <div class="project-gallery">
                             <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
                             <div class="gallery-container" id="wareaxis-gallery">
@@ -1326,7 +1341,7 @@
                         </div>
                         <p class="project-description">Complete Mobile ERP solution with PDF generation, UI pagination, and adaptive layouts.</p>
                     </div>
-                    <div class="project-body">
+                    <div class="">
                         <div class="project-gallery">
                             <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
                             <div class="gallery-container" id="ibis-gallery">
@@ -1388,7 +1403,7 @@
                         </div>
                         <p class="project-description">QR-based secure check-ins with in-app camera validation for user identity verification.</p>
                     </div>
-                    <div class="project-body">
+                    <div class="">
                         <div class="project-gallery">
                             <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
                             <div class="gallery-container" id="secure-ath-gallery">
@@ -1450,7 +1465,7 @@
                         </div>
                         <p class="project-description">Delivery App with route tracking, Google Maps integration, and infinite scrolling (lazy loading).</p>
                     </div>
-                    <div class="project-body">
+                    <div class="">
                         <div class="project-gallery">
                             <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
                             <div class="gallery-container" id="delivera-gallery">
@@ -1512,7 +1527,7 @@
                         </div>
                         <p class="project-description">A digital marketplace for pet lovers, breeders, and adopters to buy and sell pets.</p>
                     </div>
-                    <div class="project-body">
+                    <div class="">
                         <div class="project-gallery">
                             <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
                             <div class="gallery-container" id="pets-gallery">
